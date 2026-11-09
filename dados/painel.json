@@ -1,51 +1,51 @@
 {
   "app": "Brasil em Dados",
   "version": 5,
-  "exportedAt": "2026-11-07T13:22:37-03:00",
+  "exportedAt": "2026-11-09T19:39:28-03:00",
   "meta": {
     "usd": {
-      "reference": "06/11/2026",
-      "consultedAt": "2026-11-07T13:22:32-03:00"
+      "reference": "09/11/2026",
+      "consultedAt": "2026-11-09T19:39:23-03:00"
     },
     "selic": {
       "reference": "09/12/2026",
-      "consultedAt": "2026-11-07T13:22:33-03:00"
+      "consultedAt": "2026-11-09T19:39:24-03:00"
     },
     "cdi": {
-      "reference": "05/11/2026",
-      "consultedAt": "2026-11-07T13:22:34-03:00"
+      "reference": "06/11/2026",
+      "consultedAt": "2026-11-09T19:39:24-03:00"
     },
     "tr": {
       "reference": "01/11/2026",
-      "consultedAt": "2026-11-07T13:22:34-03:00"
+      "consultedAt": "2026-11-09T19:39:25-03:00"
     },
     "ipca": {
       "reference": "setembro 2026",
-      "consultedAt": "2026-11-07T13:22:34-03:00"
+      "consultedAt": "2026-11-09T19:39:25-03:00"
     },
     "ipca12": {
       "reference": "setembro 2026",
-      "consultedAt": "2026-11-07T13:22:35-03:00"
+      "consultedAt": "2026-11-09T19:39:25-03:00"
     },
     "unemp": {
       "reference": "jul-ago-set 2026",
-      "consultedAt": "2026-11-07T13:22:35-03:00"
+      "consultedAt": "2026-11-09T19:39:25-03:00"
     },
     "employed": {
       "reference": "jul-ago-set 2026",
-      "consultedAt": "2026-11-07T13:22:35-03:00"
+      "consultedAt": "2026-11-09T19:39:26-03:00"
     },
     "population": {
       "reference": "2026",
-      "consultedAt": "2026-11-07T13:22:35-03:00"
+      "consultedAt": "2026-11-09T19:39:26-03:00"
     },
     "usdPtax": {
-      "reference": "06/11/2026",
-      "consultedAt": "2026-11-07T13:22:36-03:00"
+      "reference": "09/11/2026",
+      "consultedAt": "2026-11-09T19:39:27-03:00"
     },
     "treasury": {
       "reference": "Tesouro Prefixado 2029 / Tesouro IPCA+ 2032",
-      "consultedAt": "2026-11-07T13:22:37-03:00"
+      "consultedAt": "2026-11-09T19:39:27-03:00"
     },
     "eur": {
       "reference": "06/11/2026",
@@ -58,10 +58,6 @@
   },
   "state": {
     "usd": [
-      {
-        "label": "08/10/2026",
-        "value": 5.0113
-      },
       {
         "label": "09/10/2026",
         "value": 4.9886
@@ -137,6 +133,10 @@
       {
         "label": "06/11/2026",
         "value": 5.5007
+      },
+      {
+        "label": "09/11/2026",
+        "value": 5.514
       }
     ],
     "selic": [
@@ -223,7 +223,7 @@
     ],
     "cdi": [
       {
-        "label": "05/11/2026",
+        "label": "06/11/2026",
         "value": 0.050788
       }
     ],
@@ -536,11 +536,16 @@
         "label": "06/11/2026",
         "dateTime": "2026-11-06 13:06:13.966362",
         "value": 5.5007
+      },
+      {
+        "label": "09/11/2026",
+        "dateTime": "2026-11-09 13:11:19.041465",
+        "value": 5.514
       }
     ],
     "treasury": {
-      "prefix": 14.74,
-      "ipca": 7.82,
+      "prefix": 14.66,
+      "ipca": 7.75,
       "prefixTitle": "Tesouro Prefixado 2029",
       "ipcaTitle": "Tesouro IPCA+ 2032"
     },
