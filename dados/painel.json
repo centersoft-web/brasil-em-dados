@@ -1,51 +1,51 @@
 {
   "app": "Brasil em Dados",
   "version": 5,
-  "exportedAt": "2026-11-17T18:17:27-03:00",
+  "exportedAt": "2026-11-18T00:06:28-03:00",
   "meta": {
     "usd": {
       "reference": "17/11/2026",
-      "consultedAt": "2026-11-17T18:17:22-03:00"
+      "consultedAt": "2026-11-18T00:06:23-03:00"
     },
     "selic": {
       "reference": "09/12/2026",
-      "consultedAt": "2026-11-17T18:17:22-03:00"
+      "consultedAt": "2026-11-18T00:06:24-03:00"
     },
     "cdi": {
       "reference": "16/11/2026",
-      "consultedAt": "2026-11-17T18:17:23-03:00"
+      "consultedAt": "2026-11-18T00:06:25-03:00"
     },
     "tr": {
       "reference": "01/11/2026",
-      "consultedAt": "2026-11-17T18:17:24-03:00"
+      "consultedAt": "2026-11-18T00:06:25-03:00"
     },
     "ipca": {
       "reference": "outubro 2026",
-      "consultedAt": "2026-11-17T18:17:24-03:00"
+      "consultedAt": "2026-11-18T00:06:26-03:00"
     },
     "ipca12": {
       "reference": "outubro 2026",
-      "consultedAt": "2026-11-17T18:17:24-03:00"
+      "consultedAt": "2026-11-18T00:06:26-03:00"
     },
     "unemp": {
       "reference": "jul-ago-set 2026",
-      "consultedAt": "2026-11-17T18:17:25-03:00"
+      "consultedAt": "2026-11-18T00:06:26-03:00"
     },
     "employed": {
       "reference": "jul-ago-set 2026",
-      "consultedAt": "2026-11-17T18:17:25-03:00"
+      "consultedAt": "2026-11-18T00:06:26-03:00"
     },
     "population": {
       "reference": "2026",
-      "consultedAt": "2026-11-17T18:17:25-03:00"
+      "consultedAt": "2026-11-18T00:06:27-03:00"
     },
     "usdPtax": {
       "reference": "17/11/2026",
-      "consultedAt": "2026-11-17T18:17:26-03:00"
+      "consultedAt": "2026-11-18T00:06:27-03:00"
     },
     "treasury": {
       "reference": "Tesouro Prefixado 2029 / Tesouro IPCA+ 2032",
-      "consultedAt": "2026-11-17T18:17:26-03:00"
+      "consultedAt": "2026-11-18T00:06:28-03:00"
     },
     "eur": {
       "reference": "06/11/2026",
@@ -492,11 +492,6 @@
       }
     ],
     "usdPtax": [
-      {
-        "label": "03/11/2026",
-        "dateTime": "2026-11-03 13:06:31.943412",
-        "value": 5.4929
-      },
       {
         "label": "04/11/2026",
         "dateTime": "2026-11-04 13:05:19.232051",
