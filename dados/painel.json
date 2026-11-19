@@ -1,47 +1,47 @@
 {
   "app": "Brasil em Dados",
   "version": 5,
-  "exportedAt": "2026-11-18T17:51:30-03:00",
+  "exportedAt": "2026-11-18T23:45:43-03:00",
   "meta": {
     "usd": {
       "reference": "18/11/2026",
-      "consultedAt": "2026-11-18T17:51:25-03:00"
+      "consultedAt": "2026-11-18T23:45:37-03:00"
     },
     "selic": {
       "reference": "09/12/2026",
-      "consultedAt": "2026-11-18T17:51:26-03:00"
+      "consultedAt": "2026-11-18T23:45:38-03:00"
     },
     "cdi": {
       "reference": "17/11/2026",
-      "consultedAt": "2026-11-18T17:51:26-03:00"
+      "consultedAt": "2026-11-18T23:45:40-03:00"
     },
     "tr": {
       "reference": "01/11/2026",
-      "consultedAt": "2026-11-18T17:51:27-03:00"
+      "consultedAt": "2026-11-18T23:45:40-03:00"
     },
     "ipca": {
       "reference": "outubro 2026",
-      "consultedAt": "2026-11-18T17:51:27-03:00"
+      "consultedAt": "2026-11-18T23:45:41-03:00"
     },
     "ipca12": {
       "reference": "outubro 2026",
-      "consultedAt": "2026-11-18T17:51:28-03:00"
+      "consultedAt": "2026-11-18T23:45:41-03:00"
     },
     "unemp": {
       "reference": "jul-ago-set 2026",
-      "consultedAt": "2026-11-18T17:51:28-03:00"
+      "consultedAt": "2026-11-18T23:45:41-03:00"
     },
     "employed": {
       "reference": "jul-ago-set 2026",
-      "consultedAt": "2026-11-18T17:51:28-03:00"
+      "consultedAt": "2026-11-18T23:45:42-03:00"
     },
     "population": {
       "reference": "2026",
-      "consultedAt": "2026-11-18T17:51:28-03:00"
+      "consultedAt": "2026-11-18T23:45:42-03:00"
     },
     "usdPtax": {
       "reference": "18/11/2026",
-      "consultedAt": "2026-11-18T17:51:29-03:00"
+      "consultedAt": "2026-11-18T23:45:42-03:00"
     },
     "treasury": {
       "reference": "Tesouro Prefixado 2029 / Tesouro IPCA+ 2032",
