@@ -1,47 +1,47 @@
 {
   "app": "Brasil em Dados",
   "version": 5,
-  "exportedAt": "2026-11-23T21:17:11-03:00",
+  "exportedAt": "2026-11-24T19:43:14-03:00",
   "meta": {
     "usd": {
-      "reference": "23/11/2026",
-      "consultedAt": "2026-11-23T21:17:04-03:00"
+      "reference": "24/11/2026",
+      "consultedAt": "2026-11-24T19:43:10-03:00"
     },
     "selic": {
       "reference": "09/12/2026",
-      "consultedAt": "2026-11-23T21:17:05-03:00"
+      "consultedAt": "2026-11-24T19:43:11-03:00"
     },
     "cdi": {
-      "reference": "19/11/2026",
-      "consultedAt": "2026-11-23T21:17:06-03:00"
+      "reference": "23/11/2026",
+      "consultedAt": "2026-11-24T19:43:11-03:00"
     },
     "tr": {
       "reference": "01/11/2026",
-      "consultedAt": "2026-11-23T21:17:06-03:00"
+      "consultedAt": "2026-11-24T19:43:12-03:00"
     },
     "ipca": {
       "reference": "outubro 2026",
-      "consultedAt": "2026-11-23T21:17:07-03:00"
+      "consultedAt": "2026-11-24T19:43:12-03:00"
     },
     "ipca12": {
       "reference": "outubro 2026",
-      "consultedAt": "2026-11-23T21:17:08-03:00"
+      "consultedAt": "2026-11-24T19:43:12-03:00"
     },
     "unemp": {
       "reference": "jul-ago-set 2026",
-      "consultedAt": "2026-11-23T21:17:08-03:00"
+      "consultedAt": "2026-11-24T19:43:13-03:00"
     },
     "employed": {
       "reference": "jul-ago-set 2026",
-      "consultedAt": "2026-11-23T21:17:09-03:00"
+      "consultedAt": "2026-11-24T19:43:13-03:00"
     },
     "population": {
       "reference": "2026",
-      "consultedAt": "2026-11-23T21:17:09-03:00"
+      "consultedAt": "2026-11-24T19:43:13-03:00"
     },
     "usdPtax": {
-      "reference": "23/11/2026",
-      "consultedAt": "2026-11-23T21:17:10-03:00"
+      "reference": "24/11/2026",
+      "consultedAt": "2026-11-24T19:43:14-03:00"
     },
     "treasury": {
       "reference": "Tesouro Prefixado 2029 / Tesouro IPCA+ 2032",
@@ -58,10 +58,6 @@
   },
   "state": {
     "usd": [
-      {
-        "label": "23/10/2026",
-        "value": 5.0371
-      },
       {
         "label": "26/10/2026",
         "value": 5.4998
@@ -137,6 +133,10 @@
       {
         "label": "23/11/2026",
         "value": 5.9702
+      },
+      {
+        "label": "24/11/2026",
+        "value": 5.8567
       }
     ],
     "selic": [
@@ -223,7 +223,7 @@
     ],
     "cdi": [
       {
-        "label": "19/11/2026",
+        "label": "23/11/2026",
         "value": 0.050788
       }
     ],
@@ -493,11 +493,6 @@
     ],
     "usdPtax": [
       {
-        "label": "09/11/2026",
-        "dateTime": "2026-11-09 13:11:19.041465",
-        "value": 5.514
-      },
-      {
         "label": "10/11/2026",
         "dateTime": "2026-11-10 13:06:01.353639",
         "value": 5.5834
@@ -541,6 +536,11 @@
         "label": "23/11/2026",
         "dateTime": "2026-11-23 13:06:23.798289",
         "value": 5.9702
+      },
+      {
+        "label": "24/11/2026",
+        "dateTime": "2026-11-24 13:07:40.485706",
+        "value": 5.8567
       }
     ],
     "treasury": {
