@@ -113,8 +113,10 @@
 <section class="grid"><article class="chart-card"><div class="section-title"><div><h3>Inflação e desocupação</h3><p>Últimos períodos publicados pelo GitHub</p></div><div class="legend"><span><i style="background:#3b82f6"></i>IPCA mensal</span><span><i style="background:#34d399"></i>Desocupação</span></div></div><canvas class="chart" id="socialChart" aria-label="Gráfico de inflação e desocupação"></canvas></article><article class="table-card"><div class="section-title"><div><h3>Fontes e séries</h3><p>Rastreabilidade do dashboard</p></div></div><table><thead><tr><th>Indicador</th><th>Origem</th><th>Série/Tabela</th></tr></thead><tbody><tr><td>IPCA</td><td class="source">IBGE/SIDRA</td><td>1737</td></tr><tr><td>Desocupação</td><td class="source">IBGE/SIDRA</td><td>6381</td></tr><tr><td>População ocupada</td><td class="source">IBGE/SIDRA</td><td>6318</td></tr><tr><td>População estimada</td><td class="source">IBGE/SIDRA</td><td>6579</td></tr><tr><td>Selic meta</td><td class="source">BCB/SGS</td><td>432</td></tr><tr><td>Dólar compra</td><td class="source">BCB/PTAX + SGS</td><td>PTAX / 10813</td></tr><tr><td>Euro compra</td><td class="source">BCB/PTAX</td><td>EUR / fechamento</td></tr><tr><td>IGP-M</td><td class="source">FGV/IBRE via BCB/SGS</td><td>189</td></tr></tbody></table></article></section>
 <section class="chart-card" style="margin-bottom:18px"><div class="section-title"><div><h3>Simulador de aplicações financeiras</h3><p>Compare cenários brutos, IR estimado, resultado líquido e ganho real acima da inflação</p></div></div>
 <div class="invest-controls">
-<div class="field"><label for="invAmount">Valor aplicado (R$)</label><input id="invAmount" type="number" min="0" step="100" placeholder="Digite o valor que deseja aplicar" required></div>
-<div class="field"><label for="invMonthlyContribution">Aporte mensal total (R$)</label><input id="invMonthlyContribution" type="number" min="0" step="100" placeholder="Opcional"></div>
+<!-- ↓↓↓ Campos monetários agora type="text" inputmode="decimal"; formatados em pt-BR no blur, desformatados no focus; começam em branco ↓↓↓ -->
+<div class="field"><label for="invAmount">Valor aplicado (R$)</label><input id="invAmount" type="text" inputmode="decimal" autocomplete="off" placeholder="Digite o valor que deseja aplicar"></div>
+<div class="field"><label for="invMonthlyContribution">Aporte mensal total (R$)</label><input id="invMonthlyContribution" type="text" inputmode="decimal" autocomplete="off" placeholder="Opcional"></div>
+<!-- ↑↑↑ -->
 <div class="field"><label for="invMonths">Prazo (meses)</label><input id="invMonths" type="number" min="1" max="600" step="1" value="12"></div>
 <div class="field"><label for="invCDI">CDI estimado (% a.a.)</label><input id="invCDI" type="number" min="-99" max="1000" step="0.01" value="13.65" title="Atualizado automaticamente pela série 12 do SGS/BCB; pode ser sobrescrito manualmente"><span class="data-meta" id="invCDIMeta">Data: não informada</span></div>
 <div class="field"><label for="invSelic">Selic estimada (% a.a.)</label><input id="invSelic" type="number" min="-99" max="1000" step="0.01" value="13.75"><span class="data-meta" id="invSelicMeta">Data: não informada</span></div>
@@ -127,18 +129,27 @@
 <div class="field"><label for="invPrevRate">Previdência: referência automática (% a.a.)</label><input id="invPrevRate" type="number" min="-99" max="1000" step="0.01" value="11.00"><span class="data-meta" id="invPrevRateMeta">Data: não informada</span></div>
 <div class="field"><label for="invPrevFee">Previdência: taxa de administração (% a.a.)</label><input id="invPrevFee" type="number" min="0" max="100" step="0.01" value="1.00"></div>
 <div class="field"><label for="invPrevTax">Regime tributário da previdência</label><select id="invPrevTax"><option value="regressive">Regressivo</option><option value="progressive">Progressivo (alíquota estimada)</option></select></div>
-<div class="field"><label for="invIncome">Renda bruta tributável anual (R$)</label><input id="invIncome" type="number" min="0" step="1000" placeholder="Para estimar o benefício do PGBL"></div>
-<div class="field"><label for="invWithdrawal">Valor do saque da previdência (R$)</label><input id="invWithdrawal" type="number" min="0" step="100" placeholder="Informe quanto pretende sacar"></div>
+<!-- ↓↓↓ -->
+<div class="field"><label for="invIncome">Renda bruta tributável anual (R$)</label><input id="invIncome" type="text" inputmode="decimal" autocomplete="off" placeholder="Para estimar o benefício do PGBL"></div>
+<div class="field"><label for="invWithdrawal">Valor do saque da previdência (R$)</label><input id="invWithdrawal" type="text" inputmode="decimal" autocomplete="off" placeholder="Informe quanto pretende sacar"></div>
+<!-- ↑↑↑ -->
 </div>
 <div class="calc-result" id="pensionSummary" aria-live="polite"><strong>Previdência privada</strong><p>Informe o valor aplicado e, se desejar, sua renda anual para estimar o possível benefício fiscal do PGBL.</p></div>
 <div class="calc-result" id="withdrawalSummary" aria-live="polite"><strong>Imposto no saque</strong><p>Informe o valor aplicado, o prazo e o valor do saque para comparar os regimes regressivo e progressivo.</p></div>
 <div class="invest-table-wrap"><table class="invest-table"><thead><tr><th>Aplicação</th><th>Taxa usada</th><th>IR sobre ganho</th><th class="num">Rendimento bruto</th><th class="num">IR estimado</th><th class="num">Valor líquido</th><th class="num">Retorno líquido</th><th class="num">Retorno real</th></tr></thead><tbody id="investmentRows"></tbody></table></div>
 <div class="risk-note" id="autoSources"><b>Atualização automática no GitHub:</b> os dados publicados são carregados ao abrir a página. Use Buscar dados publicados para recarregar o arquivo mais recente.</div><div class="risk-note"><b>Simulação educacional.</b> Taxas de mercado, CDI, TR, inflação, custos e preços dos ativos variam. Em títulos negociados antes do vencimento pode haver marcação a mercado. Para previdência, o VGBL é simulado com IR sobre rendimentos e o PGBL com IR sobre o valor total; a tabela regressiva controla separadamente a idade do aporte inicial e de cada aporte mensal, simulando o resgate dos lotes mais antigos primeiro. Os aportes mensais são considerados no fim de cada mês. A dedução do PGBL é recalculada por ano-calendário, limitada a 12% da renda anual informada. A estimativa progressiva mantém a tabela anual de 2026 constante em todos os anos apenas para comparação; regras futuras podem mudar. O valor definitivo depende de deduções, dependentes, outros rendimentos e das condições do plano. O cálculo aplica IR ao ganho no fim do prazo, não reproduz come-cotas, compensação de prejuízos, cupons, aportes, garantia, carência, spread, taxa de corretagem ou regras individuais. Para prazos inferiores a 30 dias, o IOF regressivo é estimado. Confirme as condições e a tributação da aplicação antes de investir.</div></section>
-<section class="chart-card" style="margin-bottom:18px"><div class="section-title"><div><h3>Valorização real de um imóvel</h3><p>Compare a valorização nominal do imóvel com a inflação acumulada no mesmo período</p></div></div><div class="calculator-grid"><div class="field"><label for="propertyValue">Valor inicial do imóvel (R$)</label><input id="propertyValue" type="number" min="0" step="1000" placeholder="Digite o valor inicial do imóvel" required inputmode="decimal"></div><div class="field"><label for="propertyGain">Valorização nominal do imóvel (%; informe)</label><input id="propertyGain" type="number" min="-99.99" max="10000" step="0.01" value="6" inputmode="decimal"></div><div class="field"><label for="propertyInflation">IPCA em 12 meses automático (%)</label><input id="propertyInflation" type="number" min="-99.99" max="10000" step="0.01" value="4.58" inputmode="decimal"><span class="data-meta" id="propertyInflationMeta">Data: não informada</span></div></div><div class="calc-result" id="propertyResult" aria-live="polite"><strong>Preencha o valor inicial do imóvel</strong><p>O resultado aparecerá automaticamente após o preenchimento.</p></div><div class="formula">Fórmula: ((1 + valorização nominal) ÷ (1 + inflação)) − 1. Use taxas referentes exatamente ao mesmo período. O cálculo não inclui aluguel, manutenção, impostos, vacância ou custos de transação.</div></section>
+<section class="chart-card" style="margin-bottom:18px"><div class="section-title"><div><h3>Valorização real de um imóvel</h3><p>Compare a valorização nominal do imóvel com a inflação acumulada no mesmo período</p></div></div><div class="calculator-grid">
+<!-- ↓↓↓ -->
+<div class="field"><label for="propertyValue">Valor inicial do imóvel (R$)</label><input id="propertyValue" type="text" inputmode="decimal" autocomplete="off" placeholder="Digite o valor inicial do imóvel"></div>
+<!-- ↑↑↑ -->
+<div class="field"><label for="propertyGain">Valorização nominal do imóvel (%; informe)</label><input id="propertyGain" type="number" min="-99.99" max="10000" step="0.01" value="6" inputmode="decimal"></div><div class="field"><label for="propertyInflation">IPCA em 12 meses automático (%)</label><input id="propertyInflation" type="number" min="-99.99" max="10000" step="0.01" value="4.58" inputmode="decimal"><span class="data-meta" id="propertyInflationMeta">Data: não informada</span></div></div><div class="calc-result" id="propertyResult" aria-live="polite"><strong>Preencha o valor inicial do imóvel</strong><p>O resultado aparecerá automaticamente após o preenchimento.</p></div><div class="formula">Fórmula: ((1 + valorização nominal) ÷ (1 + inflação)) − 1. Use taxas referentes exatamente ao mesmo período. O cálculo não inclui aluguel, manutenção, impostos, vacância ou custos de transação.</div></section>
 <footer class="footer"><span>Brasil em Dados · painel demonstrativo com dados públicos</span><span>Dados atualizados no GitHub · último pacote preservado neste navegador</span></footer>
 </main>
 <script>
 (()=>{'use strict';const $=s=>document.querySelector(s), state={usd:[],usdPtax:[],eur:[],eurPtax:[],selic:[],cdi:[],tr:[],ibov:[],ipca:[],ipca12:[],igpm:[],unemp:[],employed:[],population:[],treasury:null};const fmt=(n,d=2)=>Number(n).toLocaleString('pt-BR',{minimumFractionDigits:d,maximumFractionDigits:d});
+/* ▼▼▼ NOVO: parse de número em pt-BR (pontos = milhar, vírgula = decimal) ▼▼▼ */
+function parseBRNumber(s){s=String(s==null?'':s).trim();if(!s)return NaN;s=s.replace(/\./g,'').replace(',','.');const n=Number(s);return Number.isFinite(n)?n:NaN}
+/* ▲▲▲ FIM DO NOVO ▲▲▲ */
 function setValue(id,val,ref){const e=$(id);e.textContent=val;e.classList.remove('skeleton');if(ref)$(id+'Ref').textContent=ref}
 const STORAGE_KEY='brasilEmDadosPacoteV3';
 const INV_AMOUNT_KEY='brasilEmDadosUltimoValorAplicado';
@@ -210,7 +221,16 @@ function taxableForWithdrawal(lots,withdrawal,mode,withRates=false){
   return {tax,base};
 }
 function investmentCalc(){
-  const val=id=>Number($(id).value),amountRaw=$('#invAmount').value.trim(),amount=amountRaw===''?NaN:Number(amountRaw),monthlyContribution=Math.max(0,val('#invMonthlyContribution')||0),months=Math.floor(val('#invMonths')),cdi=val('#invCDI'),selic=val('#invSelic'),ipca=val('#invIPCA'),tr=val('#invTR'),prefix=val('#invPrefix'),spread=val('#invIPCASpread'),variable=val('#invVariable'),fee=val('#invFee'),prevRate=val('#invPrevRate'),prevFee=val('#invPrevFee'),prevTax=$('#invPrevTax').value,income=val('#invIncome'),withdrawalRaw=$('#invWithdrawal').value.trim(),withdrawal=withdrawalRaw===''?NaN:Number(withdrawalRaw),tbody=$('#investmentRows'),pensionSummary=$('#pensionSummary'),withdrawalSummary=$('#withdrawalSummary');
+  const val=id=>Number($(id).value),
+        /* ▼▼▼ NOVO: leitor monetário pt-BR para os 5 campos formatados ▼▼▼ */
+        valCurrency=id=>{const s=$(id).value.trim();return s===''?NaN:parseBRNumber(s)},
+        /* ▲▲▲ FIM DO NOVO ▲▲▲ */
+        amount=valCurrency('#invAmount'),
+        monthlyContribution=Math.max(0,valCurrency('#invMonthlyContribution')||0),
+        months=Math.floor(val('#invMonths')),cdi=val('#invCDI'),selic=val('#invSelic'),ipca=val('#invIPCA'),tr=val('#invTR'),prefix=val('#invPrefix'),spread=val('#invIPCASpread'),variable=val('#invVariable'),fee=val('#invFee'),prevRate=val('#invPrevRate'),prevFee=val('#invPrevFee'),prevTax=$('#invPrevTax').value,
+        income=valCurrency('#invIncome')||0,
+        withdrawal=valCurrency('#invWithdrawal'),
+        tbody=$('#investmentRows'),pensionSummary=$('#pensionSummary'),withdrawalSummary=$('#withdrawalSummary');
   if(!Number.isFinite(amount)||amount<0||!Number.isFinite(months)||months<1||![cdi,selic,ipca,tr,prefix,spread,variable,fee,prevRate,prevFee,income].every(Number.isFinite)){
     tbody.innerHTML='<tr><td colspan="8"><b>Preencha os valores válidos.</b> Depois disso, a comparação será calculada automaticamente.</td></tr>';return
   }
@@ -234,10 +254,43 @@ function investmentCalc(){
 }
 $('#invCDI').addEventListener('input',()=>{$('#invCDI').dataset.user='1';if(!$('#invPrevRate').dataset.user)$('#invPrevRate').value=(Number($('#invCDI').value)*.90).toFixed(2)});
 ['#invSelic','#invIPCA','#invTR','#invPrefix','#invIPCASpread','#invVariable','#invFee','#invPrevRate','#invPrevFee','#propertyGain','#propertyInflation'].forEach(id=>$(id).addEventListener('input',()=>{$(id).dataset.user='1';const meta=$(id+'Meta');if(meta)meta.textContent='Valor editado manualmente em '+new Date().toLocaleString('pt-BR')}));
-const persistentFields={invAmount:'brasilEmDadosUltimoValorAplicado',invMonthlyContribution:'brasilEmDadosUltimoAporteMensal',invIncome:'brasilEmDadosUltimaRendaAnual',invWithdrawal:'brasilEmDadosUltimoSaquePrevidencia',propertyValue:'brasilEmDadosUltimoValorImovel'};
-Object.entries(persistentFields).forEach(([id,key])=>{const field=$('#'+id),saved=localStorage.getItem(key);if(saved!==null)field.value=saved;field.addEventListener('input',()=>localStorage.setItem(key,field.value))});
+
+/* ▼▼▼ NOVO: formatação pt-BR dos 5 campos monetários (desformata no focus, formata no blur) ▼▼▼ */
+const currencyFields=['#invAmount','#invMonthlyContribution','#invIncome','#invWithdrawal','#propertyValue'];
+function stripFormat(el){
+  const v=parseBRNumber(el.value);
+  if(Number.isFinite(v)) el.value=v.toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2,useGrouping:false});
+}
+function applyFormat(el){
+  const v=parseBRNumber(el.value);
+  if(el.value.trim()===''||!Number.isFinite(v)) return;
+  el.value=v.toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2});
+}
+currencyFields.forEach(sel=>{
+  const el=$(sel);
+  el.addEventListener('focus',()=>stripFormat(el));
+  el.addEventListener('input',()=>{
+    const cleaned=el.value.replace(/[^\d.,-]/g,'');
+    if(cleaned!==el.value) el.value=cleaned;
+  });
+  el.addEventListener('blur',()=>applyFormat(el));
+});
+/* ▲▲▲ FIM DO NOVO ▲▲▲ */
+
+/* ▼▼▼ REMOVIDO: persistência dos 5 campos em localStorage (agora começam em branco) ▼▼▼ */
+/* ▲▲▲ FIM DO REMOVIDO ▲▲▲ */
+
 ['#invAmount','#invMonthlyContribution','#invMonths','#invCDI','#invSelic','#invIPCA','#invTR','#invPrefix','#invIPCASpread','#invVariable','#invFee','#invPrevRate','#invPrevFee','#invPrevTax','#invIncome','#invWithdrawal'].forEach(id=>$(id).addEventListener('input',investmentCalc));investmentCalc();
-function propertyCalc(){const valueRaw=$('#propertyValue').value.trim(),value=valueRaw===''?NaN:Number(valueRaw),gain=Number($('#propertyGain').value),inflation=Number($('#propertyInflation').value),box=$('#propertyResult');if(!Number.isFinite(value)||value<0||!Number.isFinite(gain)||gain<=-100||!Number.isFinite(inflation)||inflation<=-100){box.innerHTML='<strong>Preencha o valor inicial do imóvel</strong><p>Digite o valor no campo acima para calcular a valorização real.</p>';return}const finalValue=value*(1+gain/100),inflationAdjusted=value*(1+inflation/100),real=((1+gain/100)/(1+inflation/100)-1)*100,realMoney=finalValue-inflationAdjusted;box.innerHTML=`<strong>Valorização real: ${fmt(real)}%</strong><p>Valor após valorização: ${finalValue.toLocaleString('pt-BR',{style:'currency',currency:'BRL'})} · Valor corrigido pela inflação: ${inflationAdjusted.toLocaleString('pt-BR',{style:'currency',currency:'BRL'})} · Diferença: ${realMoney.toLocaleString('pt-BR',{style:'currency',currency:'BRL'})}</p>`}['#propertyValue','#propertyGain','#propertyInflation'].forEach(id=>$(id).addEventListener('input',propertyCalc));propertyCalc();
+function propertyCalc(){
+  /* ▼▼▼ NOVO: leitura em pt-BR do valor do imóvel ▼▼▼ */
+  const valueRaw=$('#propertyValue').value.trim(),value=valueRaw===''?NaN:parseBRNumber(valueRaw),
+  /* ▲▲▲ FIM DO NOVO ▲▲▲ */
+  gain=Number($('#propertyGain').value),inflation=Number($('#propertyInflation').value),box=$('#propertyResult');
+  if(!Number.isFinite(value)||value<0||!Number.isFinite(gain)||gain<=-100||!Number.isFinite(inflation)||inflation<=-100){box.innerHTML='<strong>Preencha o valor inicial do imóvel</strong><p>Digite o valor no campo acima para calcular a valorização real.</p>';return}
+  const finalValue=value*(1+gain/100),inflationAdjusted=value*(1+inflation/100),real=((1+gain/100)/(1+inflation/100)-1)*100,realMoney=finalValue-inflationAdjusted;
+  box.innerHTML=`<strong>Valorização real: ${fmt(real)}%</strong><p>Valor após valorização: ${finalValue.toLocaleString('pt-BR',{style:'currency',currency:'BRL'})} · Valor corrigido pela inflação: ${inflationAdjusted.toLocaleString('pt-BR',{style:'currency',currency:'BRL'})} · Diferença: ${realMoney.toLocaleString('pt-BR',{style:'currency',currency:'BRL'})}</p>`
+}
+['#propertyValue','#propertyGain','#propertyInflation'].forEach(id=>$(id).addEventListener('input',propertyCalc));propertyCalc();
 function localDateKey(d=new Date()){return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')}
 let isLoading=false;
 $('#printReport').addEventListener('click',()=>{propertyCalc();requestAnimationFrame(()=>window.print())});
