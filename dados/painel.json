@@ -1,7 +1,7 @@
 {
   "app": "Brasil em Dados",
   "version": 5,
-  "exportedAt": "2026-11-26T18:53:05-03:00",
+  "exportedAt": "2026-11-27T18:35:20-03:00",
   "meta": {
     "usd": {
       "reference": "26/11/2026",
@@ -9,39 +9,39 @@
     },
     "selic": {
       "reference": "09/12/2026",
-      "consultedAt": "2026-11-26T18:53:01-03:00"
+      "consultedAt": "2026-11-27T18:35:11-03:00"
     },
     "cdi": {
-      "reference": "25/11/2026",
-      "consultedAt": "2026-11-26T18:53:01-03:00"
+      "reference": "26/11/2026",
+      "consultedAt": "2026-11-27T18:35:12-03:00"
     },
     "tr": {
       "reference": "01/11/2026",
-      "consultedAt": "2026-11-26T18:53:02-03:00"
+      "consultedAt": "2026-11-27T18:35:12-03:00"
     },
     "ipca": {
       "reference": "outubro 2026",
-      "consultedAt": "2026-11-26T18:53:02-03:00"
+      "consultedAt": "2026-11-27T18:35:17-03:00"
     },
     "ipca12": {
       "reference": "outubro 2026",
-      "consultedAt": "2026-11-26T18:53:02-03:00"
+      "consultedAt": "2026-11-27T18:35:18-03:00"
     },
     "unemp": {
-      "reference": "jul-ago-set 2026",
-      "consultedAt": "2026-11-26T18:53:03-03:00"
+      "reference": "ago-set-out 2026",
+      "consultedAt": "2026-11-27T18:35:18-03:00"
     },
     "employed": {
-      "reference": "jul-ago-set 2026",
-      "consultedAt": "2026-11-26T18:53:04-03:00"
+      "reference": "ago-set-out 2026",
+      "consultedAt": "2026-11-27T18:35:19-03:00"
     },
     "population": {
       "reference": "2026",
-      "consultedAt": "2026-11-26T18:53:04-03:00"
+      "consultedAt": "2026-11-27T18:35:19-03:00"
     },
     "usdPtax": {
-      "reference": "26/11/2026",
-      "consultedAt": "2026-11-26T18:53:04-03:00"
+      "reference": "27/11/2026",
+      "consultedAt": "2026-11-27T18:35:19-03:00"
     },
     "treasury": {
       "reference": "Tesouro Prefixado 2029 / Tesouro IPCA+ 2032",
@@ -223,7 +223,7 @@
     ],
     "cdi": [
       {
-        "label": "25/11/2026",
+        "label": "26/11/2026",
         "value": 0.050788
       }
     ],
@@ -323,10 +323,6 @@
     ],
     "unemp": [
       {
-        "label": "dez-jan-fev 2025",
-        "value": 6.8
-      },
-      {
         "label": "jan-fev-mar 2025",
         "value": 7.0
       },
@@ -401,13 +397,13 @@
       {
         "label": "jul-ago-set 2026",
         "value": 5.2
+      },
+      {
+        "label": "ago-set-out 2026",
+        "value": 5.1
       }
     ],
     "employed": [
-      {
-        "label": "dez-jan-fev 2025",
-        "value": 100683.0
-      },
       {
         "label": "jan-fev-mar 2025",
         "value": 100511.0
@@ -483,6 +479,10 @@
       {
         "label": "jul-ago-set 2026",
         "value": 103638.0
+      },
+      {
+        "label": "ago-set-out 2026",
+        "value": 103677.0
       }
     ],
     "population": [
@@ -492,11 +492,6 @@
       }
     ],
     "usdPtax": [
-      {
-        "label": "12/11/2026",
-        "dateTime": "2026-11-12 13:08:21.353658",
-        "value": 5.6137
-      },
       {
         "label": "13/11/2026",
         "dateTime": "2026-11-13 13:03:27.375047",
@@ -541,6 +536,11 @@
         "label": "26/11/2026",
         "dateTime": "2026-11-26 13:11:27.937451",
         "value": 5.744
+      },
+      {
+        "label": "27/11/2026",
+        "dateTime": "2026-11-27 13:21:50.538969",
+        "value": 5.5424
       }
     ],
     "treasury": {
@@ -564,6 +564,7 @@
     ]
   },
   "errors": [
+    "usd: HTTP Error 304: Not Modified",
     "treasury: HTTP Error 403: Forbidden",
     "ibov: tabela diária do Ibovespa não encontrada"
   ]
