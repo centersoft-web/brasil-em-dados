@@ -1,47 +1,47 @@
 {
   "app": "Brasil em Dados",
   "version": 5,
-  "exportedAt": "2026-11-27T18:35:20-03:00",
+  "exportedAt": "2026-11-28T00:30:26-03:00",
   "meta": {
     "usd": {
-      "reference": "26/11/2026",
-      "consultedAt": "2026-11-26T18:53:01-03:00"
+      "reference": "27/11/2026",
+      "consultedAt": "2026-11-28T00:30:21-03:00"
     },
     "selic": {
       "reference": "09/12/2026",
-      "consultedAt": "2026-11-27T18:35:11-03:00"
+      "consultedAt": "2026-11-28T00:30:22-03:00"
     },
     "cdi": {
       "reference": "26/11/2026",
-      "consultedAt": "2026-11-27T18:35:12-03:00"
+      "consultedAt": "2026-11-28T00:30:22-03:00"
     },
     "tr": {
       "reference": "01/11/2026",
-      "consultedAt": "2026-11-27T18:35:12-03:00"
+      "consultedAt": "2026-11-28T00:30:23-03:00"
     },
     "ipca": {
       "reference": "outubro 2026",
-      "consultedAt": "2026-11-27T18:35:17-03:00"
+      "consultedAt": "2026-11-28T00:30:24-03:00"
     },
     "ipca12": {
       "reference": "outubro 2026",
-      "consultedAt": "2026-11-27T18:35:18-03:00"
+      "consultedAt": "2026-11-28T00:30:24-03:00"
     },
     "unemp": {
       "reference": "ago-set-out 2026",
-      "consultedAt": "2026-11-27T18:35:18-03:00"
+      "consultedAt": "2026-11-28T00:30:24-03:00"
     },
     "employed": {
       "reference": "ago-set-out 2026",
-      "consultedAt": "2026-11-27T18:35:19-03:00"
+      "consultedAt": "2026-11-28T00:30:24-03:00"
     },
     "population": {
       "reference": "2026",
-      "consultedAt": "2026-11-27T18:35:19-03:00"
+      "consultedAt": "2026-11-28T00:30:25-03:00"
     },
     "usdPtax": {
       "reference": "27/11/2026",
-      "consultedAt": "2026-11-27T18:35:19-03:00"
+      "consultedAt": "2026-11-28T00:30:25-03:00"
     },
     "treasury": {
       "reference": "Tesouro Prefixado 2029 / Tesouro IPCA+ 2032",
@@ -58,10 +58,6 @@
   },
   "state": {
     "usd": [
-      {
-        "label": "28/10/2026",
-        "value": 5.3414
-      },
       {
         "label": "29/10/2026",
         "value": 5.3738
@@ -137,6 +133,10 @@
       {
         "label": "26/11/2026",
         "value": 5.744
+      },
+      {
+        "label": "27/11/2026",
+        "value": 5.5424
       }
     ],
     "selic": [
@@ -493,11 +493,6 @@
     ],
     "usdPtax": [
       {
-        "label": "13/11/2026",
-        "dateTime": "2026-11-13 13:03:27.375047",
-        "value": 5.6512
-      },
-      {
         "label": "16/11/2026",
         "dateTime": "2026-11-16 13:06:32.509132",
         "value": 5.7318
@@ -564,7 +559,6 @@
     ]
   },
   "errors": [
-    "usd: HTTP Error 304: Not Modified",
     "treasury: HTTP Error 403: Forbidden",
     "ibov: tabela diária do Ibovespa não encontrada"
   ]
